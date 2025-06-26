@@ -1,0 +1,22 @@
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border: 1px solid #ffbf00;
+  border-radius: 20px 20px 0 0;
+  width: 250px;
+  padding: 5px;
+  gap: 20px;
+  background-color: #ffbf00;
+  font-size: 1em;
+}
+
+.options p {
+  cursor: pointer;
+}
+
+.button {
+  text-align: center;
+  margin-top: 20px;
+}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+
+.header {
+  display: flex;
+  margin-bottom: 20px;
+  height: 40px;
+  justify-content: center;
+}
+
+.name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: #f8d66d;
+}
+
+.brand{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.brand img{
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.brand h1 {
+  font-family: 'Leckerli One', cursive;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffb54c;
+  margin: 0;
+}
+
+.login {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.login .link {
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  text-decoration: none;
+  color: #000000;
+  background-color: #ffcc99;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  font-size: 20px;
+  width: auto;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.icon {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+}
+
+.iconItem {
+  background-color: #ffcc99;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: relative;
+}
+
+.iconItem img {
+  max-width: 25px;
+}
+
+.count {
+  position: absolute;
+  top: -6px;
+  left: 30px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.order {
+  position: absolute;
+  top: -6px;
+  left: 95px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  z-index: 1000;
+}

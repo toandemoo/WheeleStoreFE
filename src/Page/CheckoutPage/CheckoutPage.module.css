@@ -1,0 +1,151 @@
+.listBike {
+  border: 10px solid #f8d66d;
+  border-radius: 20px;
+  /* padding: 5px;
+  margin: 10px; */
+}
+
+.card {
+  display: flex;
+  gap: 20px;
+  border: 2px solid #8cd47e;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  align-items: center;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.card[data-clicked='true'] {
+  border: 5px solid #8cd47e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.subcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+}
+
+.card input[type='checkbox'] {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.card .imgBike {
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  font-weight: bolder;
+}
+
+.location {
+  display: flex;
+  gap: 10px;
+}
+
+.location img {
+  width: 2em;
+}
+
+.quantity {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.quantity input[type='number'] {
+  width: 50px;
+  padding: 0;
+  font-size: 1.5em;
+  background-color: inherit;
+  border: none;
+  text-align: center;
+  -moz-appearance: textfield;
+  color: black;
+}
+
+.quantity img {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.quantity input[type='number']::-webkit-outer-spin-button,
+.quantity input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.total {
+  margin: 10px 100px;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: #006600;
+}
+
+.button {
+  text-align: center;
+}
+
+/* ----------------- */
+
+.section {
+  color: #000000;
+  border: 5px solid #8cd47e;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  width: 500px;
+  height: 540px;
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  gap: 10px;
+}
+
+.img img {
+  width: 400px;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.pickdrop {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.pickdrop h4 {
+  margin: 0;
+  color: #a6a6a6;
+}
+
+.pickdrop p {
+  margin: 5px 0;
+  font-weight: bolder;
+}
+
+.type {
+  color: #a6a6a6;
+  font-weight: bolder;
+}

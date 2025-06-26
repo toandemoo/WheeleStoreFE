@@ -1,0 +1,33 @@
+.section1 {
+  background-color: #f8d66d;
+  border: 5px solid #ffbf00;
+  border-radius: 20px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 400px;
+  padding: 20px 50px 20px 50px;
+}
+
+.citizen {
+  width: 400px;
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px dashed #000000;
+  font-weight: bolder;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.label img {
+  max-width: 380px;
+  max-height: 200px;
+}

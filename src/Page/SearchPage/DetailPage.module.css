@@ -1,0 +1,81 @@
+.title {
+  color: #7abd7e;
+  text-align: left;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.section {
+  color: #000000;
+  border: 5px solid #f8dd6d;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 15px;
+  width: auto;
+}
+
+.infor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  gap: 10px;
+}
+
+.section1 {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.descript {
+  width: 300px;
+}
+
+.img img {
+  width: 500px;
+  border-radius: 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 50px;
+}
+
+.pickdrop {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.pickdrop h4 {
+  margin: 0;
+  color: #a6a6a6;
+}
+
+.pickdrop p {
+  margin: 0;
+  margin-top: 5px;
+  font-weight: bolder;
+}
+
+.type {
+  color: #a6a6a6;
+  font-weight: bolder;
+}

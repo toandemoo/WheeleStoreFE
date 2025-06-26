@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.listBike {
+  border: 10px solid #f8d66d;
+  border-radius: 20px;
+  max-height: 700px; /* hoặc height: 300px */
+  overflow-y: auto;
+  width: 720px;
+  margin-bottom: 10px;
+}
+
+.userInfor{
+  border: 10px solid #f8d66d;
+  border-radius: 20px;
+  max-height: 700px;
+  overflow-y: auto;
+  width: 720px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.userInforItem{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background-color: #ffcccc;
+  border-radius: 20px;
+  margin: 2px;
+}
+
+.payment{
+  background-color: #ffcccc;
+  border-radius: 20px;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin: 2px;
+}
+
+.rowtitle{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  border: 2px solid #8cd47e;
+  border-radius: 20px;
+  /* width: 500px; */
+}
+
+.rowtitle h5{
+  width: 100px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid #8cd47e;
+  border-radius: 20px;
+  /* padding: 10px; */
+  margin: 10px;
+  /* width: 500px; */
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.card[data-clicked='true'] {
+  border: 5px solid #8cd47e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.subcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+.card input[type='checkbox'] {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.card .imgBike {
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  font-weight: bolder;
+}
+
+
