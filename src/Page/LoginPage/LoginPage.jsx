@@ -3,7 +3,6 @@ import styles from './LoginPage.module.css';
 import Button from '@components/Button/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import Popup from '@components/PopUp/PopUp';
 import { useHeader } from '../../Context/HeaderContext';
@@ -11,6 +10,7 @@ import { LoginApi } from '../../Routes/PublicRoutes/LoginRoute';
 import Loading from '@components/Loading/Loading';
 import { getWishlist } from '../../Routes/PublicRoutes/WishlistRoute';
 import { getOrders } from '../../Routes/PublicRoutes/OrdersRoute';
+import { GoogleOauthLogin } from '../../Routes/PublicRoutes/GoogleOauth';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -36,7 +36,7 @@ function LoginPage() {
       }
       else
       {
-        setMessage('Đăng nhập thất bại!\nEmail hoặc mật khẩu không đúng.');
+        setMessage('Login failed!\nEmail or password incorrect!');
         setShowPopup(true);
       }
   
@@ -53,20 +53,13 @@ function LoginPage() {
     }
   };
 
-  const GoogleLogin = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
-      try {
-        const res = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
-          headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
-        });
-        console.log(res.data);
-        navigate('/home');
-      } catch (error) {
-        console.error('Error fetching user info:', error);
-      }
-    },
-    onError: () => console.log('Login failed!'),
-  });
+  const GoogleLogin = async () => {
+    try {
+      await GoogleOauthLogin();
+    } catch (error) {
+      console.error('Error fetching user info:', error);
+    }
+  }
 
   return (
     <>

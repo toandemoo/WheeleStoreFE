@@ -5,6 +5,9 @@ import { useEffect, useState } from 'react';
 import styles from './HomePage.module.css';
 import { useNavigate } from 'react-router-dom';
 import { BrandsBike, CarTypesBike } from '../../Routes/PublicRoutes/CarsRoute';
+import { getWishlist } from '../../Routes/PublicRoutes/WishlistRoute';
+import { getOrders } from '../../Routes/PublicRoutes/OrdersRoute';
+import { useHeader } from '../../Context/HeaderContext';
 
 
 function HomePage() {
@@ -21,9 +24,22 @@ function HomePage() {
 
   const navigate = useNavigate();
 
+  const { login, setHeader } = useHeader();
   useEffect(() => {
+        
     async function getMotors() {
       try {
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get("access_token");
+        const email = params.get("email");
+          
+        if (token) {
+          localStorage.setItem("accesstoken", token);
+          var mywishlist =  await getWishlist();
+          var myOrders = await getOrders();
+          setHeader({ ...login, isLoggin: true, email: email, wishlist: mywishlist.data.length, order: myOrders.data.length });
+        } 
+
         var brandsData = await BrandsBike();
         setBrands(brandsData.data.items.map(b => b.name));
 
