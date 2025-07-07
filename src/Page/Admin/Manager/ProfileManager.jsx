@@ -1,16 +1,15 @@
 import Header from '@components/Header/Header';
-import styles from './ProfilePage.module.css';
+import styles from './ProfileManager.module.css';
 import Button from '@components/Button/Button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Popup from '@components/PopUp/PopUp';
 import Loading from '@components/Loading/Loading';
 import BackButton from '@components/BackButton/BackButton';
-import { UserApi } from '@routes/PublicRoutes/UserRoute';
-import { UpdateUserApi } from '../../Routes/PublicRoutes/UserRoute';
-import { useHeader } from '../../Context/HeaderContext';
+import { getUserById, UpdateUserApi, UserApi } from '../../../Routes/PublicRoutes/UserRoute';
+import { useHeader } from '../../../Context/HeaderContext';
 
-function ProfilePage() {
+export default function ProfileManager() {
   const [showPopup, setShowPopup] = useState(false);
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false)
@@ -28,10 +27,11 @@ function ProfilePage() {
     role: ''
   });
 
+  const { id } = useParams();
   useEffect(() => {
     const fetchUser = async () => {
       setLoading(true);
-      const user = await UserApi();
+      const user = await getUserById(id);
       if (!user) {
         setMessage('Do not display information!\nPlease reload the page.');
         setShowPopup(true);
@@ -98,7 +98,7 @@ function ProfilePage() {
       {showPopup && <Popup message={message} onClose={() => setShowPopup(false)} />}
       {loading && <Loading />}
       <Header />
-      <BackButton handler={() => navigate('/home')} />
+      <BackButton handler={() => navigate('/admin/manager')} />
       <div className={styles.main}>
         <div className={styles.avatar}>
           <label>
@@ -191,7 +191,7 @@ function ProfilePage() {
                 <label htmlFor="address">Address</label>
                 <input
                   type="text"
-                  value={userInfor.address}
+                  value={userInfor.address || ''}
                   onChange={(e) => setUserInfor({ ...userInfor, address: e.target.value })}
                   placeholder="a/b/c"
                   name="address"
@@ -210,4 +210,3 @@ function ProfilePage() {
   );
 }
 
-export default ProfilePage;

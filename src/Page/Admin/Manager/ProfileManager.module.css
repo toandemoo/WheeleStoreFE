@@ -1,0 +1,99 @@
+.main {
+   display: flex;
+   gap: 50px;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 20px;
+ }
+ 
+ .avatar {
+   width: 300px;
+   height: auto;
+ }
+ 
+ .container {
+   border: 1px solid #d2f0cc;
+   background-color: #d2f0cc;
+   border-radius: 20px;
+   width: 700px;
+   padding: 20px;
+ }
+ 
+ h3 {
+   margin: 0;
+   padding: 0;
+   padding-bottom: 20px;
+   font-size: 2em;
+ }
+ 
+ h6 {
+   margin: 0;
+   padding: 10px 0 10px 0;
+   display: flex;
+   justify-content: flex-end;
+ }
+ 
+ .infor{
+   display: flex;
+   gap: 20px;
+ }
+ 
+ .infor > div {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 16px; /* khoảng cách giữa các cặp */
+ }
+ 
+ .infor input{
+   background-color:  #d9d9d9;
+   border: none;
+   border-radius: 20px;
+   padding: 10px;
+ }
+ 
+ .infor input[type='number']::-webkit-outer-spin-button,
+ .infor input[type='number']::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+ 
+ .addressWrapper {
+   width: 685px;
+ }
+ 
+ .button,
+ h5 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+ }
+ 
+ .link {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+ }
+ 
+ .link button {
+   display: flex;
+   align-items: center;
+   gap: 2 px;
+   border: none;
+   border-radius: 10px;
+   height: 30px;
+   font-size: 1em;
+   cursor: pointer;
+ }
+ 
+ .link button:hover {
+   box-shadow: 5px 5px 10px #f8d66d;
+ }
+ 
+ .link img {
+   width: 40px;
+   height: auto;
+ }
+ 

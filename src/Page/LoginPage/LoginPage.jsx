@@ -29,10 +29,15 @@ function LoginPage() {
       const res = await LoginApi({ email, password });
       setLoading(false);
       if (res && res.status) {
-        var mywishlist = await getWishlist();
-        var myOrders = await getOrders();
-        setHeader({...login, isLoggin: true, email: email, wishlist: mywishlist.data.length, order: myOrders.data.length });
-        navigate("/home");
+        if (res.role === 0) {
+          setHeader({ ...login, isLoggin: true, email: email, wishlist: 0, order: 0, role: 0 });
+          navigate("/admin/index");
+        } else { 
+          var mywishlist = await getWishlist();
+          var myOrders = await getOrders();
+          setHeader({...login, isLoggin: true, email: email, wishlist: mywishlist.data.length, order: myOrders.data.length, role: res.role});
+          navigate("/home");
+        }
       }
       else
       {
@@ -103,7 +108,7 @@ function LoginPage() {
           <button onClick={() => GoogleLogin()}>
             <img src='../../../assets/images/google.png' alt='google' />
             Google
-          </button>
+          </button>                                                                                        
         </div>
       </div>
       {showPopup && <Popup message={message} onClose={() => setShowPopup(false)} />}

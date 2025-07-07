@@ -1,0 +1,164 @@
+.container{
+   display: flex;
+   gap: 20px;
+}
+
+.content {
+   margin-left: 200px;
+   padding: 20px;
+   transition: margin-left 0.3s;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .content.expand {
+   margin-left: 85px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+
+
+.tableRow,
+.tableRow th,
+.tableRow td {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.tableRow th{
+   width: 200px;
+}
+
+.tableRow th:first-child {
+   width: 50px;
+   text-align: center;
+ }
+
+
+ .title{
+   display: flex;
+   justify-content: space-between;
+}
+
+
+.productImage{
+   width: 100px;
+   height: 100px;
+   object-fit: cover;
+   border-radius: 10px;
+}
+
+.pagination {
+   display: flex;
+   gap: 4px;
+   justify-self: center;
+   margin-top: 20px;
+}
+
+.pagination button {
+   padding: 8px 12px;
+   border: none;
+   border-radius: 5px;
+   background-color: #f0f0f0;
+   cursor: pointer;
+   transition: background-color 0.3s, color 0.3s;
+}
+
+ .pagination button:hover {
+   background-color: #e0e0e0;
+ }
+
+ .pagination button:disabled {
+   background-color: #d0d0d0;
+   cursor: not-allowed;
+ }
+
+.pagination .active {
+   font-weight: bold;
+   background-color: #ffc966;
+   color: red;
+}
+
+.noData{
+   text-align: center;
+   font-size: 1.2rem;
+   color: #888;
+   padding: 10px;
+}
+
+.btn {
+   display: flex;
+   gap: 10px;
+}
+
+.modalContent {
+   padding: 20px;
+}
+
+.form {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   width: 100%;
+}
+.form input,
+.form select {
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   width: 100%;
+}
+
+.form input[type="file"] {
+   padding: 5px;
+}
+
+.formRow {
+   display: flex;
+   gap: 40px;
+}
+
+
+.formGroup {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.submitBtn {
+   padding: 10px;
+   border: none;
+   border-radius: 5px;
+   background-color: #4CAF50;
+   color: white;
+   cursor: pointer;
+   transition: background-color 0.3s, color 0.3s;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.form button:hover {
+   background-color: #45a049;
+}
+
+.searchInput {
+   padding: 5px;
+   border: 1px solid #ccc;
+   border-radius: 20px;
+   width: 50%;
+   box-sizing: border-box;
+   margin-bottom: 10px;
+}

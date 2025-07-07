@@ -1,101 +1,23 @@
-.container {
-  background: white;
-  padding: 10px;
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+}
+.modalContent {
+  background: #fff8e1;
+  padding: 20px;
   border-radius: 10px;
   position: relative;
-  width: 900px;
-  height: 530px;
+  width: 500px;
 }
 
-.modalContent {
-  display: flex;
-  color: #767676;
-  line-height: 1;
-}
-
-.closeBtn {
+.bin {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  border: none;
-  background: none;
-  font-size: 20px;
+  top: -10px;
+  right: -10px;
   cursor: pointer;
-}
-
-.imageSection {
-  width: 50%;
-  padding: 10px;
-}
-
-.mainImage {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.thumbnailContainer {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-}
-
-.thumbnailContainer img {
-  width: 32%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.infoSection {
-  margin: 0;
-  margin: 0 60px 0 5px;
-}
-
-.content0 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.content1 {
-  display: flex;
-  gap: 15px;
-}
-
-.content2 {
-  display: flex;
-  justify-content: space-between;
-}
-
-.content2 div h3 {
-  font-size: 1.5em;
-}
-
-.content2 div h4 {
-  margin: 0;
-}
-
-.content3 {
-  display: flex;
-  justify-content: space-between;
-  /* align-items:  */
-}
-
-.title {
-  color: #045c09;
-  font-size: 2em;
-  padding: 0;
-}
-
-h4 span {
-  color: #000000;
-}
-
-.button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
 }

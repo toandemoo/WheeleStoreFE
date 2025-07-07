@@ -9,6 +9,7 @@ export const HeaderProvider = ({ children }) => {
     email: '',
     wishlist: 0,
     order: 0,
+    role: 1,
   });
 
   return (
@@ -18,7 +19,6 @@ export const HeaderProvider = ({ children }) => {
   );
 };
 
-// 2. Hook để dùng context
 export const useHeader = () => {
   const context = useContext(HeaderContext);
   if (context === null) {

@@ -9,10 +9,8 @@ import { getOrders } from '../../Routes/PublicRoutes/OrdersRoute';
 function Header() {
   const navigate = useNavigate();
   const { header, setHeader } = useHeader();
-  // Logout handler
+
   const logout = () => {
-    // Nếu bạn dùng google logout thì mở lại đoạn này
-    // googleLogout();
     setHeader({ ...header, isLoggin: false });
     localStorage.clear();
     sessionStorage.clear();
@@ -26,7 +24,11 @@ function Header() {
         var res = await ValidateToken(token);        
         var mywishlist = await getWishlist();
         var myorder = await getOrders();
-        setHeader({ ...header, isLoggin: true, email: res.result.email, wishlist: mywishlist.data.length, order: myorder.data.length});
+        if (res.result.role === 'Admin') {
+          setHeader({ ...header, isLoggin: true, email: res.result.email, wishlist: mywishlist.data.length, order: myorder.data.length, role: 0 });
+        } else if (res.result.role === 'User') {
+          setHeader({ ...header, isLoggin: true, email: res.result.email, wishlist: mywishlist.data.length, order: myorder.data.length, role: 1 });
+        }
       }
     }
     valid();
@@ -53,20 +55,25 @@ function Header() {
             Login
           </Link>
         </div>
-      ) : ( 
+      ) : (
         <div className={styles.login}>
-          <div id="quantity" className={styles.count}>
-            {header.wishlist || 0}
-          </div>
-          <div className={styles.iconItem} onClick={() => navigate('/checkout')}>
-            <img src="/assets/images/shopping-cart.png" alt="Cart" style={{ cursor: 'pointer' }} />
-          </div>
-          <div id="order" className={styles.order}>
-            {header.order || 0}
-          </div>
-          <div className={styles.iconItem} onClick={() => navigate('/order')}>
-            <img src="/assets/images/orderbag.png" alt="Order Bag" style={{ cursor: 'pointer' }} />
-          </div>
+          {header.role !== 0 && (
+            <>
+              <div id="quantity" className={styles.count}>
+                {header.wishlist || 0}
+              </div>
+              <div className={styles.iconItem} onClick={() => navigate('/checkout')}>
+                <img src="/assets/images/shopping-cart.png" alt="Cart" style={{ cursor: 'pointer' }} />
+              </div>
+              <div id="order" className={styles.order}>
+                {header.order || 0}
+              </div>
+              <div className={styles.iconItem} onClick={() => navigate('/order')}>
+                <img src="/assets/images/orderbag.png" alt="Order Bag" style={{ cursor: 'pointer' }} />
+              </div>
+            </>
+          )}
+
           <div className={styles.iconItem} onClick={() => navigate('/profile')}>
             <img src="/assets/images/user.png" alt="User Profile" style={{ cursor: 'pointer' }} />
           </div>
@@ -75,6 +82,7 @@ function Header() {
           </div>
         </div>
       )}
+
     </header>
   );
 }

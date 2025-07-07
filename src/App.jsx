@@ -8,6 +8,13 @@ import CheckoutPage from './Page/CheckoutPage/CheckoutPage';
 import { HeaderProvider } from './Context/HeaderContext';
 import { LicenseProvider } from './Context/LicenseContext';
 import OrderPage from './Page/Order/OrderPage';
+import Dashboard from './Page/Admin/Dashboard';
+import Manager from './Page/Admin/Manager/manager';
+import Product from './Page/Admin/Product/Product';
+import Order from './Page/Admin/Order/Order';
+import DetailProduct from './Page/Admin/Product/DetailProduct';
+import ProfileManager from './Page/Admin/Manager/ProfileManager';
+import DetailOrder from './Page/Admin/Order/DetailOrder';
 
 function App() {
   return (
@@ -23,6 +30,13 @@ function App() {
           <Route path='/checkout' element={<CheckoutPage />} />
           <Route path='/payment' element={<CheckoutPage currentStep={2} />} />
           <Route path='/order' element={<OrderPage />} />
+          <Route path='/admin/index' element={<Dashboard />} />
+          <Route path='/admin/manager' element={<Manager />} />
+          <Route path='/admin/manager/profile/:id' element={<ProfileManager />} />
+          <Route path='/admin/product' element={<Product />} />
+          <Route path='/admin/product/:id' element={<DetailProduct/>} />
+          <Route path='/admin/order' element={<Order />} />
+          <Route path='/admin/order/detail/:id' element={<DetailOrder />} />
         </Routes>
       </LicenseProvider>
     </HeaderProvider>
