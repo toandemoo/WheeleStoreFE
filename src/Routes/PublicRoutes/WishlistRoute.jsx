@@ -1,6 +1,8 @@
+const server = import.meta.env.VITE_SERVER;
+
 export const getWishlist = async () => {
   try {
-    const response = await fetch('http://localhost:5153/api/wishlist', {
+    const response = await fetch(`${server}/api/wishlist`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +26,7 @@ export const getWishlist = async () => {
 
 export const AddtoCart = async (id) => {
    try {
-     const response = await fetch(`http://localhost:5153/api/wishlist/${id}`, {
+     const response = await fetch(`${server}/api/wishlist/${id}`, {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json',
@@ -48,7 +50,7 @@ export const AddtoCart = async (id) => {
  
  export const RemoveFromCart = async (id) => {
    try {
-     const response = await fetch(`http://localhost:5153/api/wishlist/${id}`, {
+     const response = await fetch(`${server}/api/wishlist/${id}`, {
        method: 'DELETE',
        headers: {
          'Content-Type': 'application/json',
@@ -71,7 +73,7 @@ export const AddtoCart = async (id) => {
  
 export const updateWishlist = async (id, quantity) => {
   try {
-    const response = await fetch(`http://localhost:5153/api/wishlist/${id}`, {
+    const response = await fetch(`${server}/api/wishlist/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

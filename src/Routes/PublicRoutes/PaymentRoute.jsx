@@ -1,6 +1,8 @@
+const server = import.meta.env.VITE_SERVER;
+
 export const Payment = async (amount, orderDescription, name, orderid) => {
    try {
-       const response = await fetch('http://localhost:5153/api/payment', {
+       const response = await fetch(`${server}/api/payment`, {
          method: 'POST',
          headers: {
            'Content-Type': 'application/json',
@@ -33,7 +35,7 @@ export const CarCheckout = async (ids) => {
   try {
     const query = ids.map(id => `ids=${id}`).join('&');
     const token = localStorage.getItem('accesstoken');
-    const response = await fetch(`http://localhost:5153/api/wishlist/car-checkout?${query}`, {
+    const response = await fetch(`${server}/api/wishlist/car-checkout?${query}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

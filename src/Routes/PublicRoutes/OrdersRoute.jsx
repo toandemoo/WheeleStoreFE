@@ -1,6 +1,8 @@
+const server = import.meta.env.VITE_SERVER;
+
 export const getOrders = async () => {
    try {
-      const response = await fetch(`http://localhost:5153/api/order`, {
+      const response = await fetch(`${server}/api/order`, {
          method: "GET",
          headers: {
             'Content-Type': 'application/json',
@@ -25,7 +27,7 @@ export const getOrders = async () => {
 
 export const DetailOrders = async (id) => {
    try {
-      const response = await fetch(`http://localhost:5153/api/order/${id}`, {
+      const response = await fetch(`${server}/api/order/${id}`, {
          method: "GET",
          headers: {
             'Content-Type': 'application/json',
@@ -50,7 +52,7 @@ export const DetailOrders = async (id) => {
 
 export const createOrder = async (cars) => {
    try {
-      const response = await fetch(`http://localhost:5153/api/order/`, {
+      const response = await fetch(`${server}/api/order/`, {
          method: "POST",
          headers: {
             'Content-Type': 'application/json',
@@ -84,7 +86,7 @@ export const getAllOrdersAdmin = async (page, pageSize) => {
          pageSize: pageSize,
       }).toString();
 
-      const response = await fetch(`http://localhost:5153/api/order/admin/all?${query}`, {
+      const response = await fetch(`${server}/api/order/admin/all?${query}`, {
          method: "GET",
          headers: {
             'Content-Type': 'application/json',
@@ -109,7 +111,7 @@ export const getAllOrdersAdmin = async (page, pageSize) => {
 
 export const getDetailOrdersAdmin = async (id) => {
    try {
-      const response = await fetch(`http://localhost:5153/api/order/admin/${id}`, {
+      const response = await fetch(`${server}/api/order/admin/${id}`, {
          method: "GET",
          headers: {
             'Content-Type': 'application/json',
@@ -150,7 +152,7 @@ export const FilterOrderAdmin = async (filter) => {
        pageSize: filter.perPage || 10,
      });
  
-     const response = await fetch(`http://localhost:5153/api/order/admin/search?${query}`, {
+     const response = await fetch(`${server}/api/order/admin/search?${query}`, {
        method: 'GET',
        headers: {
          'Content-Type': 'application/json',

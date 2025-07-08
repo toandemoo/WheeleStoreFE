@@ -1,7 +1,9 @@
+const server = import.meta.env.VITE_SERVER;
+
 export const UserApi = async () => {
   try {
     const token = localStorage.getItem('accesstoken');
-    const response = await fetch('http://localhost:5153/api/user', {
+    const response = await fetch(`${server}/api/user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -26,7 +28,7 @@ export const UserApi = async () => {
 export const UpdateUserApi = async ({ fullName, phoneNumber, profileImage, address, birth }) => {
   try {
     const token = localStorage.getItem('accesstoken');
-    const response = await fetch('http://localhost:5153/api/user', {
+    const response = await fetch(`${server}/api/user`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -58,7 +60,7 @@ export const UpdateUserApi = async ({ fullName, phoneNumber, profileImage, addre
 export const getUserByRole = async (role) => {
   try {
     const token = localStorage.getItem('accesstoken');
-    const response = await fetch(`http://localhost:5153/api/user/admin?role=${role}`, {
+    const response = await fetch(`${server}/api/user/admin?role=${role}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -83,7 +85,7 @@ export const getUserByRole = async (role) => {
 export const CreateUser = async (userData) => {
   try {
     const token = localStorage.getItem('accesstoken');
-    const response = await fetch('http://localhost:5153/api/user/admin', {
+    const response = await fetch(`${server}/api/user/admin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -116,7 +118,7 @@ export const CreateUser = async (userData) => {
 export const DeleteUser = async (id) => {
   try {
     const token = localStorage.getItem('accesstoken');
-    const response = await fetch(`http://localhost:5153/api/user/admin/${id}`, {
+    const response = await fetch(`${server}/api/user/admin/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -140,7 +142,7 @@ export const DeleteUser = async (id) => {
 export const getUserById = async (id) => {
   try {
     const token = localStorage.getItem('accesstoken');
-    const response = await fetch(`http://localhost:5153/api/user/admin/${id}`, {
+    const response = await fetch(`${server}/api/user/admin/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -170,7 +172,7 @@ export const getAllUsers = async (page, pageSize) => {
       pageSize: pageSize,
     }).toString();
 
-    const response = await fetch(`http://localhost:5153/api/user/admin/all?${query}`, {
+    const response = await fetch(`${server}/api/user/admin/all?${query}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

@@ -1,6 +1,9 @@
+const server = import.meta.env.VITE_SERVER;
+
+
 export const LoginApi = async ({ email, password }) => {
   try {
-    const response = await fetch('http://localhost:5153/api/jwt/login', {
+    const response = await fetch(`${server}/api/jwt/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +28,7 @@ export const LoginApi = async ({ email, password }) => {
 
 export const ValidateToken = async (token) => {
   try {
-    const response = await fetch('http://localhost:5153/api/jwt/validate-token', {
+    const response = await fetch(`${server}/api/jwt/validate-token`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

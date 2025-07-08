@@ -1,6 +1,8 @@
+const server = import.meta.env.VITE_SERVER;
+
 export const SearchCar = async (page, pageSize) => {
   try {
-    const response = await fetch(`http://localhost:5153/api/car/all?page=${page}&pageSize=${pageSize}`, {
+    const response = await fetch(`${server}/api/car/all?page=${page}&pageSize=${pageSize}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -23,7 +25,7 @@ export const SearchCar = async (page, pageSize) => {
 
 export const DetailBike = async (id) => {
   try {
-    const response = await fetch(`http://localhost:5153/api/car/${id}`, {
+    const response = await fetch(`${server}/api/car/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -46,7 +48,7 @@ export const DetailBike = async (id) => {
 
 export const BrandsBike = async () => {
   try {
-    const response = await fetch("http://localhost:5153/api/brand/all?page=1&pageSize=100", {
+    const response = await fetch(`${server}/api/brand/all?page=1&pageSize=100`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -69,7 +71,7 @@ export const BrandsBike = async () => {
 
 export const CarTypesBike = async () => {
   try {
-    const response = await fetch("http://localhost:5153/api/cartype/all?page=1&pageSize=100", {
+    const response = await fetch(`${server}/api/cartype/all?page=1&pageSize=100`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -104,7 +106,7 @@ export const FilterCar = async (filter) => {
     });
 
 
-    const response = await fetch(`http://localhost:5153/api/car/filter?${query}`, {
+    const response = await fetch(`${server}/api/car/filter?${query}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -127,7 +129,7 @@ export const FilterCar = async (filter) => {
 
 export const DeleteCar = async (id) => {
   try {
-    const response = await fetch(`http://localhost:5153/api/car/${id}`, {
+    const response = await fetch(`${server}/api/car/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -150,7 +152,7 @@ export const DeleteCar = async (id) => {
 
 export const AddCar = async (car) => {
   // try {
-    const response = await fetch(`http://localhost:5153/api/car`, {
+    const response = await fetch(`${server}/api/car`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -182,7 +184,7 @@ export const AddCar = async (car) => {
 
 export const UpdateCar = async (id, car) => {
   try {
-    const response = await fetch(`http://localhost:5153/api/car/${id}`, {
+    const response = await fetch(`${server}/api/car/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -229,7 +231,7 @@ export const FilterCarAdmin = async (filter) => {
       PageSize: filter.perPage || 10,
     });
 
-    const response = await fetch(`http://localhost:5153/api/car/admin/search?${query}`, {
+    const response = await fetch(`${server}/api/car/admin/search?${query}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

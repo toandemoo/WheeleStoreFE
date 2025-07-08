@@ -1,6 +1,8 @@
+const server = import.meta.env.VITE_SERVER;
+
 export const RegisterApi = async ({ email, password, fullName }) => {
   try {
-    const response = await fetch('http://localhost:5153/api/jwt/register', {
+    const response = await fetch(`${server}/api/jwt/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
